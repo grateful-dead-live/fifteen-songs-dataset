@@ -36,7 +36,7 @@ def resampleAudio(f):
     makeDir(os.path.join('dataset', f[0], splt[0]))
     source = os.path.join('original_audio', f[0], splt[0], splt[1])
     target = os.path.join('dataset', f[0], splt[0], splt[1][:-3] + 'wav')
-    a, sr = load(source, sr=44100, mono=True)   # TODO: write load function without librosa
+    a, sr = load(source)   # TODO: write load function without librosa
     if tuning != 0:
         a = resample(a, tuning, 'sinc_fastest')
     output.write_wav(target, a, sr)
