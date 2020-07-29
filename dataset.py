@@ -36,8 +36,8 @@ def resampleAudio(f):
     makeDir(os.path.join('dataset', f[0], splt[0]))
     source = os.path.join('original_audio', f[0], splt[0], splt[1])
     target = os.path.join('dataset', f[0], splt[0], splt[1][:-3] + 'wav')
-    a, sr = load(source, sr=None, mono=False)   # TODO: write load function without librosa
-    if tuning != 0: 
+    a, sr = load(source, sr=44100, mono=True)   # TODO: write load function without librosa
+    if tuning != 0:
         a = resample(a, tuning, 'sinc_fastest')
     output.write_wav(target, a, sr)
 
@@ -58,10 +58,10 @@ def main():
         for loc, tuning in items.items():
             mp3s.append((song, MP3.format(loc), tuning))
 
-    pool = ThreadPool(PARALLEL_DOWNLOAD)
-    list(tqdm(pool.imap_unordered(download, mp3s), total=len(mp3s)))
-    pool.close()
-    pool.join()
+    #pool = ThreadPool(PARALLEL_DOWNLOAD)
+    #list(tqdm(pool.imap_unordered(download, mp3s), total=len(mp3s)))
+    #pool.close()
+    #pool.join()
 
     pool = mp.Pool(PARALLEL_RESAMPLE)
     list(tqdm(pool.imap_unordered(resampleAudio, mp3s), total=len(mp3s)))
