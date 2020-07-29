@@ -1,0 +1,37 @@
+{
+  "_form": ["intro","verse","chorus","verse","chorus","bridge","jam"],
+  "intro": [
+    ["F#m","F#m","F#m","F#m","F#m","F#m","F#m"],["F#m","F#m","F#m","F#m","F#m","F#m","F#m"],
+    ["F#m","F#m","F#m","F#m","F#m","F#m","F#m"],["F#m","F#m","F#m","F#m","F#m","F#m","F#m"],
+    ["F#m","F#m","F#m","F#m","F#m","F#m","F#m"],["F#m","F#m","F#m","F#m","F#m","F#m","F#m"],
+    ["F#m","F#m","F#m","F#m","F#m","F#m","F#m"],["F#m","F#m","F#m","F#m","F#m","F#m","F#m"]
+  ],
+  "verse": [
+    ["F#m","F#m","F#m","F#m","F#m","F#m","F#m"],["F#m","F#m","F#m","F#m","F#m","F#m","F#m"],
+    ["F#m","F#m","F#m","F#m","F#m","F#m","F#m"],["F#m","F#m","F#m","F#m","F#m","F#m","F#m"],
+    ["F#m","F#m","F#m","F#m","F#m","F#m","F#m"],["F#m","F#m","F#m","F#m","F#m","F#m","F#m"],
+    ["F#m","F#m","F#m","F#m","F#m","F#m","F#m"],["F#m","F#m","F#m","F#m","F#m","F#m","F#m"],
+    ["F#m","F#m","F#m","F#m","F#m","F#m","F#m"],["F#m","F#m","F#m","F#m","F#m","F#m","F#m"],
+    ["F#m","F#m","F#m","F#m","F#m","F#m","F#m"],["F#m","F#m","F#m","F#m","F#m","F#m","F#m"]
+  ],
+  "chorus": [
+    ["G","G","G","G","G","C","C"],["G","G","G","F","F","C","C"],
+    ["G","G","G","G","G","C","C"],["G","G","G","F","F","C","C"],
+    ["G","G","G","G","G","C","C"],["G","G","G","F","F","C","C"],
+    ["G","G","G","G","G","C","C"],["G","G","G","F","F","C","C"]
+  ],
+  "bridge": [
+    "chorus",
+    ["Dm","Dm","Dm","Dm","Dm","Dm","Dm"],["E7","E7","E7","E7","E7","E7","E7"],
+    ["Dm","Dm","Dm","Dm","Dm","Dm","Dm"],["E7","E7","E7","E7","E7","E7","E7"],
+    ["Dm","Dm","Dm","Dm","Dm","Dm","Dm"],["E7","E7","E7","E7","E7","E7","E7"],
+    ["Dm","Dm","Dm","Dm","Dm","Dm","Dm"],["F","F","F","A","A","A","A"],
+    ["Bm","Bm","Bm","Dm","Dm","Dm","Dm"],["Am","Am","Am","Cm","Cm","Cm","Cm"],
+    ["Gm","Gm","Gm","Bbm","Bbm","Bbm","Bbm"],
+    ["Fm","Fm","Fm","Fm#5","Fm#5","Fm6","Fm6"]
+  ],
+  "jam": [
+    "chorus",
+    "verse..."
+  ]
+}

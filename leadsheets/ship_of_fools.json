@@ -1,0 +1,27 @@
+{
+  "_form": ["intro","verse","chorus","verse","chorus","solo","chorus","verse",
+    "chorus","outro"],
+  "intro": [
+    ["Cm","Cm","Cm","Cm"],["F","F","F","F"],["Bb","Bb","Bb","Bb"],["Bb","Bb","Bb","Bb"]
+  ],
+  "verse": [
+    ["Bb","Bb","Bb","Bb"],["F","F","Eb","Eb"],["Edim","Edim","Edim","Edim"],["Bb","Bb","Bb","Bb"],
+    ["Bb","Bb","D","D"],["Eb","Eb","Eb","Eb"],["Cm","Cm","Cm","Cm"],["F","F","F","F"],
+    ["F","F","F","F"],["Eb","Eb","C","C"],["Dm","Dm","Dm","Dm"],["Cm","Cm","Cm","Cm"],
+    ["Eb","Eb","Eb","Eb"],["Bb","Bb","Bb","Bb"],["F","F","Eb","Eb"],["Bb","Bb","Bb","Bb"]
+  ],
+  "chorus": [
+    ["F","F","F","F"],["F","F","Eb","Eb"],["Bb","Bb","Bb","Bb"],["Bb","Bb","Bb","Bb"],
+    ["F","F","F","F"],["F","F","Eb","Eb"],["Gm","Gm","Gm","Gm"],["Gm","Gm","Gm","Gm"],
+    ["Gm","Gm","Gm","Gm"],["Gm","Gm","Gm","Gm"],["Edim","Edim","Edim","Edim"],
+    ["Edim","Edim","Edim","Edim"],["Cm","Cm","Cm","Cm"],
+    ["F","F","Eb","Eb"],["Bb","Bb","Bb","Bb"],["Bb","Bb","Bb","Bb"]
+  ],
+  "solo": "verse",
+  "outro": [
+    ["Gm","Gm","Gm","Gm"],["Gm","Gm","Gm","Gm"],
+    ["Edim","Edim","Edim","Edim"],["Edim","Edim","Edim","Edim"],
+    ["Cm","Cm","Cm","Cm"],["F","F","Eb","Eb"],["Bb","Bb","Bb","Bb"],["Bb","Bb","Bb","Bb"],
+    ["Cm","Cm","Cm","Cm"],["F","F","Eb","Eb"]
+  ]
+}

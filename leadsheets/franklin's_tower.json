@@ -1,0 +1,19 @@
+{
+  "_form": ["intro","verse","chorus","ilude","verse","chorus","ilude",
+    "verse","chorus","ilude","verse","chorus","jam...","verse","chorus",
+    "jam...","verse","verse","chorus","jam..."],
+  "base": [
+    ["A","A","A","G"],["D","D","D","G"],["A","A","A","G"],["D","D","D","G"]
+  ],
+  "intro": [
+    "base","base","base","base","base","base","base","base"
+  ],
+  "verse": [
+    "base","base"
+  ],
+  "chorus": "verse",
+  "ilude": [
+    "base","base","base"
+  ],
+  "jam": "base"
+}
