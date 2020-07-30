@@ -1,6 +1,6 @@
 import json, os, warnings, requests
 from multiprocessing.pool import ThreadPool
-import multiprocessing as mp
+from multiprocessing import Pool
 from tqdm import tqdm
 from samplerate import resample
 from librosa import load, output
@@ -11,7 +11,7 @@ warnings.filterwarnings('ignore')   # librosa warning "using audioread"
 PARALLEL_DOWNLOAD = 40
 PARALLEL_RESAMPLE = 12
 
-MP3 = "https://archive.org/download/{0}"
+MP3 = 'https://archive.org/download/{0}'
 
 
 def getJson():
@@ -57,12 +57,14 @@ def main():
         for loc, tuning in items.items():
             mp3s.append((song, MP3.format(loc), tuning))
 
+    print('download audio files')
     pool = ThreadPool(PARALLEL_DOWNLOAD)
     list(tqdm(pool.imap_unordered(download, mp3s), total=len(mp3s), smoothing=0.1))
     pool.close()
     pool.join()
 
-    pool = mp.Pool(PARALLEL_RESAMPLE)
+    print('resampling audio files')
+    pool = Pool(PARALLEL_RESAMPLE)
     list(tqdm(pool.imap_unordered(resampleAudio, mp3s), total=len(mp3s), smoothing=0.1))
     pool.close()
     pool.join()
