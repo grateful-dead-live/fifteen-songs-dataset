@@ -1,8 +1,7 @@
-import json, os, warnings
+import json, os, warnings, requests
 from multiprocessing.pool import ThreadPool
 import multiprocessing as mp
 from tqdm import tqdm
-import requests
 from samplerate import resample
 from librosa import load, output
 
@@ -38,7 +37,7 @@ def resampleAudio(f):
     target = os.path.join('dataset', f[0], splt[0], splt[1][:-3] + 'wav')
     a, sr = load(source)   # TODO: write load function without librosa
     if tuning != 0:
-        a = resample(a, tuning, 'sinc_fastest')
+        a = resample(a, -tuning, 'sinc_fastest')    # -tunning?
     output.write_wav(target, a, sr)
 
 
