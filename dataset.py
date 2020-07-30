@@ -58,12 +58,12 @@ def main():
             mp3s.append((song, MP3.format(loc), tuning))
 
     pool = ThreadPool(PARALLEL_DOWNLOAD)
-    list(tqdm(pool.imap_unordered(download, mp3s), total=len(mp3s)))
+    list(tqdm(pool.imap_unordered(download, mp3s), total=len(mp3s), smoothing=0.1))
     pool.close()
     pool.join()
 
     pool = mp.Pool(PARALLEL_RESAMPLE)
-    list(tqdm(pool.imap_unordered(resampleAudio, mp3s), total=len(mp3s)))
+    list(tqdm(pool.imap_unordered(resampleAudio, mp3s), total=len(mp3s), smoothing=0.1))
     pool.close()
     pool.join()
 
