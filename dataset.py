@@ -67,7 +67,7 @@ def main():
     remaining = [m for m in mp3s if (not os.path.exists(get_audio_path(m)))
         or os.path.getsize(get_audio_path(m)) == 0]
     pool = ThreadPool(PARALLEL_DOWNLOAD)
-    list(tqdm(pool.imap_unordered(download, mp3s), total=len(remaining), smoothing=0.1))
+    list(tqdm(pool.imap_unordered(download, remaining), total=len(remaining), smoothing=0.1))
     pool.close()
     pool.join()
 
