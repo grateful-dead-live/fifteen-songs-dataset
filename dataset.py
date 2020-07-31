@@ -33,13 +33,18 @@ def download(f):
 def resampleAudio(f):
     tuning = f[2]
     splt = f[1].split('/')[-2:]
-    makeDir(os.path.join('dataset', f[0], splt[0]))
+    makeDir(os.path.join('tuned_audio', f[0], splt[0]))
     source = os.path.join('original_audio', f[0], splt[0], splt[1])
-    target = os.path.join('dataset', f[0], splt[0], splt[1][:-3] + 'wav')
+    target = os.path.join('tuned_audio', f[0], splt[0], splt[1][:-3] + 'wav')
     a, sr = load(source, res_type='kaiser_fast')   # TODO: write load function without librosa
     if tuning != 0:
         a = resample(a, tuning, 'sinc_fastest')
     soundfile.write(target, a, sr)
+
+
+def get_audio_path(f):
+    splt = f[1].split('/')[-2:]
+    return os.path.join('original_audio', f[0], splt[0], splt[1])
 
 
 def makeDir(d):
@@ -50,17 +55,19 @@ def makeDir(d):
 
 def main():
     makeDir('original_audio')
-    makeDir('dataset')
+    makeDir('tuned_audio')
     js = getJson()
     mp3s = []
     for song, items in js.items():
-        makeDir(os.path.join('dataset', song))
+        makeDir(os.path.join('tuned_audio', song))
         for loc, tuning in items.items():
             mp3s.append((song, MP3.format(loc), tuning))
 
     print('download audio files')
+    remaining = [m for m in mp3s if (not os.path.exists(get_audio_path(m)))
+        or os.path.getsize(get_audio_path(m)) == 0]
     pool = ThreadPool(PARALLEL_DOWNLOAD)
-    list(tqdm(pool.imap_unordered(download, mp3s), total=len(mp3s), smoothing=0.1))
+    list(tqdm(pool.imap_unordered(download, mp3s), total=len(remaining), smoothing=0.1))
     pool.close()
     pool.join()
 
