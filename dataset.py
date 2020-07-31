@@ -3,7 +3,8 @@ from multiprocessing.pool import ThreadPool
 from multiprocessing import Pool
 from tqdm import tqdm
 from samplerate import resample
-from librosa import load, output
+from librosa import load
+import soundfile
 
 warnings.filterwarnings('ignore')   # librosa warning "using audioread"
 
@@ -38,7 +39,7 @@ def resampleAudio(f):
     a, sr = load(source, res_type='kaiser_fast')   # TODO: write load function without librosa
     if tuning != 0:
         a = resample(a, tuning, 'sinc_fastest')
-    output.write_wav(target, a, sr)
+    soundfile.write(target, a, sr)
 
 
 def makeDir(d):
