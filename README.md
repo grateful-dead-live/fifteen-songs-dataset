@@ -14,3 +14,5 @@ This will download and resample the audio files and save them into two directori
 ## details
 
 The 15 songs are (number of versions in parentheses): Box of Rain (85), Casey Jones (181), China Cat Sunflower (181), China Doll (65), Cosmic Charlie (56), Cumberland Blues (132), Dancin' in the Streets (68), Dark Star (139), Estimated Prophet (223), Eyes of the World (218), Franklin's Tower (126), Scarlet Begonias (184), Ship of Fools (138), Sugar Magnolia (351), and Truckin' (315). They were selected based on the criteria that a large number of versions exist and that a corresponding reference studio recording by the Grateful Dead is available (not part of the dataset).
+
+This dataset was first used in: Florian Thalmann, Kazuyoshi Yoshii, Thomas Wilmering, Geraint Wiggins, Mark Sandler. *A Method for Analysis of Shared Structure in Large Music Collections using Techniques from Genetic Sequencing and Graph Theory*, ISMIR 2020. We kindly ask you to cite this paper if you use the dataset.
